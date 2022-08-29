@@ -9,8 +9,15 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+from pathlib import Path
+import os
+
 import dj_database_url
 from dotenv import load_dotenv, find_dotenv
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent
+
 
 from pathlib import Path
 import os #1. This will allow us to join the base directory to static file directories and also allow us to add installed apps. 
