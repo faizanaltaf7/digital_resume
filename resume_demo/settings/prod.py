@@ -1,5 +1,6 @@
-from distutils.log import debug
 import django_on_heroku
+from distutils.log import debug
+
 from decouple import config
 
 from resume_demo.settings.dev import ALLOWED_HOSTS, SECRET_KEY
@@ -18,7 +19,7 @@ DEBUG_PROPAGATE_EXECEPTIONS = True
  
  LOGGING = {
     'version': 1,
-    'diable_existing_loggers':False, 
+    'diable_existing_loggers': False, 
     'formatters' : {
         'verbose' : {
             'format': "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
@@ -42,5 +43,5 @@ DEBUG_PROPAGATE_EXECEPTIONS = True
             },
         }
 
-django_on_heroku.settings(locals(),staticfiles=False)
+django_on_heroku.settings(locals(), staticfiles=False)
 del DATABASES['default']['OPTIONS']['sslmode']
