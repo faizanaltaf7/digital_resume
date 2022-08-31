@@ -12,7 +12,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'faizanaltaf.herokuapp.com',
+    'https://faizanaltaf.herokuapp.com/',
     'https://git.heroku.com/faizanaltaf.git',
 ]
 
