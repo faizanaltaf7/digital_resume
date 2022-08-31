@@ -19,13 +19,13 @@ ALLOWED_HOSTS = [
 
 #AmazonS3 Settings
 
-AWS_ACCESS_KEY_ID = 'AKIAWB743WZLK5BK5EN3'
+AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
 
-AWS_SECRET_ACCESS_KEY = 'E8KQmyNPLdcXjpNsg3VabVVRaE9R1qkhZ55z0qPV'
+AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
 
-AWS_STORAGE_BUCKET_NAME = 'resume-static2'
+AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
 
-AWS_S3_CUSTOM_DOMAIN = 'http://resume-static2.s3.amazonaws.com'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 AWS_DEFAULT_ACL = 'public-read'
 
@@ -81,3 +81,4 @@ DEBUG_PROPAGATE_EXECEPTIONS = True
 
 django_on_heroku.settings(locals(), staticfiles=False)
 del DATABASES['default']['OPTIONS']['sslmode']
+
