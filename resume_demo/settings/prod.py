@@ -44,5 +44,5 @@ DEBUG_PROPAGATE_EXECEPTIONS = True
             },
         }
 
-django_on_heroku.settings(locals(), staticfiles=True)
+django_on_heroku.settings(locals(), staticfiles=False)
 del DATABASES['default']['OPTIONS']['sslmode']
