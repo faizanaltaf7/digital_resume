@@ -10,11 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 from distutils.command.config import config
+
 from pathlib import Path
+
 import os
-from decouple import config
 
 import dj_database_url
+
+from decouple import config
+
 from dotenv import load_dotenv, find_dotenv
 
 
