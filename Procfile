@@ -1,0 +1,1 @@
+web: python3.10 manage.py migrate && gunicorn resume_demo.wsgi
