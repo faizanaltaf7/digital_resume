@@ -21,6 +21,8 @@ from decouple import config
 
 from dotenv import load_dotenv, find_dotenv
 
+import django_on_heroku
+
 
 
 from pathlib import Path
@@ -134,3 +136,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+

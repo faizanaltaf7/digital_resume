@@ -8,6 +8,8 @@ from resume_demo.settings.dev import ALLOWED_HOSTS, SECRET_KEY
 
 from .base import *
 
+django_on_heroku.settings(locals(), staticfiles=False)
+
 SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = False
@@ -29,6 +31,7 @@ AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 AWS_DEFAULT_ACL = 'public-read'
 
+
 AWS_S3_OBJECT_PARAMETERS = {
     'cacheControl': 'max-age=86400',
 }
@@ -40,6 +43,9 @@ AWS_QUERYSTRING_AUTH = False
  AWS_HEADERS = {
     'Access-Control-Allow-Origin': '*', 
  }
+
+ #STATICFILES_DIRS = [
+  #  os.path.join(BASE_DIR, 'resume_demo/static'),
 
  DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
@@ -79,6 +85,6 @@ DEBUG_PROPAGATE_EXECEPTIONS = True
             },
         }
 
-django_on_heroku.settings(locals(), staticfiles=False)
+
 del DATABASES['default']['OPTIONS']['sslmode']
 
